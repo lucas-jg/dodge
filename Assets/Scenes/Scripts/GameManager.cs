@@ -26,6 +26,12 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!isGameover)
+        {
+            surviveTime += Time.deltaTime;
+            timeText.text = "Time : " + (int)surviveTime;
+            Debug.Log(timeText.text);
+        }
 
     }
 
