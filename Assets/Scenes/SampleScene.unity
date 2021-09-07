@@ -1610,7 +1610,7 @@ GameObject:
   - component: {fileID: 2095518899}
   - component: {fileID: 2095518898}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Game Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1628,9 +1628,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7063e9ece70321a4a9ea3bccce2e72bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameoverText: {fileID: 0}
+  gameoverText: {fileID: 507987219}
   timeText: {fileID: 1180030378}
-  recordText: {fileID: 0}
+  recordText: {fileID: 1998641100}
 --- !u!4 &2095518899
 Transform:
   m_ObjectHideFlags: 0
