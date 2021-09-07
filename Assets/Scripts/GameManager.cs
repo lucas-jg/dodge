@@ -15,6 +15,8 @@ public class GameManager : MonoBehaviour
     private float surviveTime;
     private bool isGameover;
 
+    private string BEST_TIEM = "BestTime";
+    private string SAMPLE_SCENE = "SampleScene";
 
 
     void Start()
@@ -23,20 +25,40 @@ public class GameManager : MonoBehaviour
         isGameover = false;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (!isGameover)
         {
             surviveTime += Time.deltaTime;
             timeText.text = "Time : " + (int)surviveTime;
-            Debug.Log(timeText.text);
+        }
+        else
+        {
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                SceneManager.LoadScene(SAMPLE_SCENE);
+            }
         }
 
     }
 
     public void EndGame()
     {
+        isGameover = true;
+        gameoverText.SetActive(true);
 
+        float bestTime = PlayerPrefs.GetFloat(BEST_TIEM);
+
+        if (surviveTime > bestTime)
+        {
+            PlayerPrefs.SetFloat(BEST_TIEM, surviveTime);
+        }
+
+        recordText.text = "Best Time : " + (int)bestTime;
+    }
+
+    public bool GetIsGameover()
+    {
+        return isGameover;
     }
 }
